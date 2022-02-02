@@ -57,5 +57,14 @@ namespace TaxCalc
 
         public void ClearNexusAddresses() =>
             this._taxCalculator.ClearNexusAddresses();
+
+        public void ResetOrder()
+        {
+            SetFromAddress(null);
+            SetToAddress(null);
+            SetShipping(0);
+            ClearOrderProducts();
+            ClearNexusAddresses();
+        }
     }
 }

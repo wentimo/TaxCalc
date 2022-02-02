@@ -8,7 +8,7 @@ using TaxCalc.Exceptions;
 
 namespace TaxCalcTests.Calculators.TaxJar
 {
-    public class TaxJarTests
+    public class TaxJarCalculatorTests
     {
         private readonly string _apiKey = "5da2f821eee4035db4771edab942a4cc";
 
@@ -25,11 +25,7 @@ namespace TaxCalcTests.Calculators.TaxJar
         [SetUp]
         public void ResetOrder()
         {
-            this._service.SetToAddress(null);
-            this._service.SetFromAddress(null);
-            this._service.SetShipping(0);
-            this._service.ClearOrderProducts();
-            this._service.ClearNexusAddresses();
+            this._service.ResetOrder();
         }
 
         [OneTimeTearDown]
